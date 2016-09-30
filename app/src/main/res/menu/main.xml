@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_sort"
+        android:orderInCategory="100"
+        android:title="@string/sort_results_by_name"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_queriesComplex"
+        android:orderInCategory="100"
+        android:title="@string/queries_with_condition"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_find_all"
+        android:orderInCategory="100"
+        android:title="@string/get_all_contact"
+        app:showAsAction="never" />
+</menu>

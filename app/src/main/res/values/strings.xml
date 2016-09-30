@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Realm</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="copyright">Realm libraries demo</string>
+    <string name="realm_io">Realm.io</string>
+    <string name="sort_results_by_name">Sort Ascending Name</string>
+    <string name="queries_with_condition">Queries With Condition</string>
+    <string name="get_all_contact">Get All Contact</string>
+    <string name="email">Email Contact</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="save_contact">Save Contact</string>
+    <string name="contact_name">Contact Name</string>
+</resources>
