@@ -1,8 +1,12 @@
 package com.blueeagle.realm;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RealmResults<Contact> contactResults;
     public static RealmConfiguration realmConfiguration;
 
+    private Logger logger = LoggerFactory.getLogger(MainActivity.class);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,15 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .name("realm.demo")
                 .build();
 
-        // In this example i will create new data when openning app
-        // So call deleteRealm method to delete realm database
-        Realm.deleteRealm(realmConfiguration);
-
         // create realm object to manager database
         realm = Realm.getInstance(realmConfiguration);
-
-        // init data
-        initData();
 
         // get all Contact
         excuteData();
@@ -81,6 +80,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(editContact);
             }
         });
+
+        // LogBack test
+        logger.debug("LogBack - Debug message");
+        logger.info("LogBack - Info message");
+        logger.warn("LogBack - Warn message");
+        logger.error("LogBack - Error message");
     }
 
     private void findAllViewId() {
@@ -101,7 +106,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+                drawer,
+                toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -143,11 +153,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         per17.setEmail("GothemMass@gmail.com");
 
         realm.commitTransaction();
+
+        // LogBack
+        logger.debug("LogBack - Init data successful!");
     }
 
     public void excuteData() {
         // get all contact
         contactResults = realm.where(Contact.class).findAll();
+
+        if(contactResults.size() == 0)
+            initData();
+
+        // LogBack
+        logger.debug("LogBack - Excute data done!");
 
         // You can try
         // contactResults = realm.where(Contact.class).findAllAsync(); // findAll Asynchronous
@@ -160,11 +179,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .contains("fullName", "n") // fullName contains "n"
                 .or() // OR
                 .beginGroup()
-                    .beginsWith("fullName", "T") // fullName begin withs "T"
-                    // . = AND
-                    .contains("phone", "332")
+                .beginsWith("fullName", "T") // fullName begin withs "T"
+                // . = AND
+                .contains("phone", "332")
                 .endGroup()
                 .findAll();
+
+        // LogBack
+        logger.debug("LogBack - Excute query done!");
+
         // You can try
         // between(), greaterThan(), lessThan(), greaterThanOrEqualTo() & lessThanOrEqualTo()
         // equalTo() & notEqualTo()
@@ -180,6 +203,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Sort descending name
         // contactResults.sort("fullName", Sort.DESCENDING);
         adapter.notifyDataSetChanged();
+
+        // LogBack
+        logger.debug("LogBack - Sort ascending complete!");
     }
 
     private void updateListView() {
@@ -189,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

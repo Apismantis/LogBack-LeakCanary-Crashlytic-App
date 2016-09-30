@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Objects;
 
 import Model.Contact;
@@ -28,6 +31,8 @@ public class EditContact extends AppCompatActivity {
     private Realm realm = Realm.getInstance(MainActivity.realmConfiguration);
     private String Action;
     private int Id;
+
+    private Logger logger = LoggerFactory.getLogger(EditContact.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +52,21 @@ public class EditContact extends AppCompatActivity {
         // Get ACTION by extra of intent that are passed through from a different activity
         final Intent intent = getIntent();
         if (intent.hasExtra(Global.ACTION)) {
+
+            // LogBack
+            logger.debug("LogBack - " + intent.getStringExtra(Global.ACTION));
+
             switch (intent.getStringExtra(Global.ACTION)) {
                 case Global.ACTION_ADD:
                     Action = "Add";
+                    getSupportActionBar().setTitle("Add New Contact");
                     break;
 
                 case Global.ACTION_EDIT:
                     Id = intent.getIntExtra(Global.ID, 0);
                     fillData(Id);
                     Action = "Edit";
+                    getSupportActionBar().setTitle("Update Contact");
                     break;
             }
         }
@@ -119,7 +130,8 @@ public class EditContact extends AppCompatActivity {
             return true;
 
         } catch (Exception e) {
-            Log.d("Add Contact", e.getMessage());
+            //Log.d("Add Contact", e.getMessage());
+            logger.error("LogBack - Add new contact: " + e);
             return false;
         }
     }
@@ -136,7 +148,8 @@ public class EditContact extends AppCompatActivity {
             return true;
 
         } catch (Exception e) {
-            Log.d("Update Contact", e.getMessage());
+            //Log.d("Update Contact", e.getMessage());
+            logger.error("LogBack - Udate contact: " + e);
             return false;
         }
     }
