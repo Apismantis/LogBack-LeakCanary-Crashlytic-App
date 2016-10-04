@@ -61,7 +61,7 @@
         jar="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="3fb2fbab5971b98b72cf93d0638e305e9b9d4a97">
+        sha1="f26cee9b44cf353eb537cc04eaef8e0f97dea58c">
         <dex dex="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6de11ede02fc6e4b3f0e2d5033fa56b6cc0ab0c9/classes.dex" />
     </item>
     <item
@@ -79,6 +79,13 @@
         <dex dex="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_bfbeaffc55067f9c54e9aa8dd1a0a9a7b05bf740/classes.dex" />
     </item>
     <item
+        jar="/home/apismantis/.gradle/caches/modules-2/files-2.1/com.sun.mail/android-mail/1.5.5/53a2f927b235acb565dbe9314ececfb7e6d43020/android-mail-1.5.5.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="53a2f927b235acb565dbe9314ececfb7e6d43020">
+        <dex dex="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-mail-1.5.5_d94dbaefd0e3e1a643f2e17d270d372423a89272/classes.dex" />
+    </item>
+    <item
         jar="/home/apismantis/.gradle/caches/modules-2/files-2.1/com.github.tony19/logback-android-core/1.1.1-6/93117015ae639e6482e4e1ad5f988c3f61d09fe0/logback-android-core-1.1.1-6.jar"
         jumboMode="true"
         revision="23.0.3"
@@ -89,7 +96,7 @@
         jar="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="19d2c8c97a7dc521196c92de28e01b16101fab06">
+        sha1="bdb3428ad93519bf9511185ac49628377204c6ed">
         <dex dex="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_44d1bebba10f061dbe28332d24385a7722b01e16/classes.dex" />
     </item>
     <item
@@ -105,6 +112,13 @@
         revision="23.0.3"
         sha1="debf30ce0a7560396b6235edef77e447006454c2">
         <dex dex="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_97170e945078a601b77426cc35bcc8008fc7c4a1/classes.dex" />
+    </item>
+    <item
+        jar="/home/apismantis/.gradle/caches/modules-2/files-2.1/com.sun.mail/android-activation/1.5.5/5442d5e05808145434b750c9f8a0c3f537383c5a/android-activation-1.5.5.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5442d5e05808145434b750c9f8a0c3f537383c5a">
+        <dex dex="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-activation-1.5.5_04bf46993648ebbbbb63d42c4e0c0e9954985d3a/classes.dex" />
     </item>
     <item
         jar="/home/apismantis/AndroidStudioProjects/LogBack-LeakCanary-Crashlytic-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"

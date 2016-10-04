@@ -42,11 +42,40 @@
         </encoder>
     </appender>
 
+    <!--Create a rolling file appender log-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>chat.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>chat.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd.MM.yyyy. HH:mm:ss} %level [%thread] %logger{20} - %msg%n</pattern>
+        </encoder>
+        <Encoding>utf-8</Encoding>
+    </appender>
+
+    <!--Send email log -->
+    <appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+        <smtpHost>smtp.gmail.com</smtpHost>
+        <smtpPort>465</smtpPort>
+        <SSL>true</SSL>
+        <username>cauvongsaumua073@gmail.com</username>
+        <password>@#nguyenvantuan.123.gmail</password>
+        <to>nguyenvantuan.itus@gmail.com</to>
+        <from>nguyenvantuan.itus@gmail.com</from>
+        <subject>%date{yyyyMMdd'T'HH:mm:ss.SSS}; %-5level; %msg</subject>
+        <layout class="ch.qos.logback.classic.html.HTMLLayout" />
+        <STARTTLS>true</STARTTLS>
+        <asynchronousSending>false</asynchronousSending>
+    </appender>
+
     <!-- Write DEBUG messages from class Contact to its own log -->
     <logger name="Model.Contact" level="DEBUG">
         <appender-ref ref="DebugLog" />
     </logger>
 
+    <!--Write TRACE message from MainActivity to TraceLog-->
     <logger name="com.blueeagle.realm.MainActivity" level="TRACE">
         <appender-ref ref="TraceLog" />
     </logger>
@@ -54,5 +83,6 @@
     <!-- Write DEBUG (and higher-level) messages to logcat -->
     <root level="DEBUG">
         <appender-ref ref="logcat" />
+        <appender-ref ref="EMAIL" />
     </root>
 </configuration>

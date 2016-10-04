@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 import java.util.Objects;
 
@@ -33,6 +35,7 @@ public class EditContact extends AppCompatActivity {
     private int Id;
 
     private Logger logger = LoggerFactory.getLogger(EditContact.class);
+    private Marker marker = MarkerFactory.getMarker("NOTIFY_ADMIN");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class EditContact extends AppCompatActivity {
 
             // LogBack
             logger.debug("LogBack - " + intent.getStringExtra(Global.ACTION));
+            logger.debug("LogBack - Send log to my email");
 
             switch (intent.getStringExtra(Global.ACTION)) {
                 case Global.ACTION_ADD:
