@@ -21,9 +21,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.squareup.leakcanary.LeakCanary;
 
 import Model.Contact;
+import io.fabric.sdk.android.Fabric;
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import io.realm.RealmConfiguration;
@@ -50,11 +53,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(LeakCanary.isInAnalyzerProcess(this)) {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }
 
         LeakCanary.install(getApplication());
+
+        // Set up Crashlytics, disabled for debug builds
+        Crashlytics crashlyticsKit = new Crashlytics.Builder()
+                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
+                .build();
+
+        Fabric.with(this, new Crashlytics());
+        logUser();
+        Crashlytics.log(1, "CRASHLYTIC", "Message from craslytic 3........");
 
         // Find all view id
         findAllViewId();
@@ -96,6 +108,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         logger.warn("LogBack - Warn message");
         logger.error("LogBack - Error message");
     }
+
+    private void logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        Crashlytics.setUserIdentifier("12345");
+        Crashlytics.setUserEmail("user@fabric.io");
+        Crashlytics.setUserName("Test User");
+        Crashlytics.log(1, "CRASHLYTIC", "Message from craslytic 1........");
+        Crashlytics.log(1, "CRASHLYTIC", "Message from craslytic 2........");
+        Crashlytics.setString("str_id", "String message");
+    }
+
 
     private void findAllViewId() {
         listContact = (ListView) findViewById(R.id.list_item_contact);
@@ -171,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // get all contact
         contactResults = realm.where(Contact.class).findAll();
 
-        if(contactResults.size() == 0)
+        if (contactResults.size() == 0)
             initData();
 
         // LogBack
@@ -215,6 +239,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // LogBack
         logger.debug("LogBack - Sort ascending complete!");
+
+        //logUser();
+        Crashlytics.setUserEmail("crash@blue.io");
+        Crashlytics.log("Log này có được gửi...");
+        throw new RuntimeException("Crash message...");
     }
 
     private void updateListView() {
