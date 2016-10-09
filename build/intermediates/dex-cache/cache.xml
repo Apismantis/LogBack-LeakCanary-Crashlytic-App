@@ -1,3 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_11bf4a7edd1ac05566e655354e2a1746cacf9905\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\io.fabric.sdk.android\fabric\1.3.14\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\io.fabric.sdk.android-fabric-1.3.14_82e14cdcc92bf4dd3b7b4f0f28a5e4a193be7def\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.github.tony19\logback-android-classic\1.1.1-6\614c66c9ece69eef48c65a8558de4fd7266d9f69\logback-android-classic-1.1.1-6.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="614c66c9ece69eef48c65a8558de4fd7266d9f69">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\logback-android-classic-1.1.1-6_25d85030b5f05c2cf1ccfd3964fe95970136ff22\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\io.realm\realm-android-library\0.88.3\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3b33bdbe6218ef3a2f81c30ea9dd2797b2a9745d">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\io.realm-realm-android-library-0.88.3_df544d777b14c9b3acbe6b2d138a4edfa900130a\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.squareup.leakcanary\leakcanary-android\1.5\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.squareup.leakcanary-leakcanary-android-1.5_df28d8dc5f10bc8c98e46463f1f59c11a514be4a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.sun.mail\android-activation\1.5.5\5442d5e05808145434b750c9f8a0c3f537383c5a\android-activation-1.5.5.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5442d5e05808145434b750c9f8a0c3f537383c5a">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\android-activation-1.5.5_c678fe6bd78801e5a5c51e4612829457eee18651\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_2d9131aa43ffcfa19c3a329024fea6d15031863b\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_858115e594892b65aa8c1d6a71bc8157bd7100e4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\io.realm\realm-annotations\0.88.3\d0d6edfa4b1d9c3bf8a76b231a616350137b76c9\realm-annotations-0.88.3.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d0d6edfa4b1d9c3bf8a76b231a616350137b76c9">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\realm-annotations-0.88.3_643afef2076603334f73d22707add70fd1f12107\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_985eba178651dd91023ad64c1125feb0bcceb01a\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.crashlytics.sdk.android\answers\1.3.10\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ed6b455e3dd7bbf1ff31f8df0b41e2f0d87f3ace">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.crashlytics.sdk.android-answers-1.3.10_ea5e1a08cbe3ea8f5ac804b44a3488d3e124f78c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-analyzer\1.5\3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f\leakcanary-analyzer-1.5.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\leakcanary-analyzer-1.5_0645edd3c549225446499ec68f4fc8b2f2834983\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_77dfffd663d6bbf0568321f325e40a2f94e48bd4\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.crashlytics.sdk.android\crashlytics\2.6.5\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="02cc9f2e5899415add52bc716602b6b38e7eeb99">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.crashlytics.sdk.android-crashlytics-2.6.5_bb0df4a1da3f2801cc70f02560be3e5d039502c6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-watcher\1.5\288101b16513158c2923ad3fb6161d1452b65e73\leakcanary-watcher-1.5.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\leakcanary-watcher-1.5_ce18bed5a0aa235d53e0d7c82ead7517a17f21ce\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.3.0_54b4eee6daacb3b086bc03ca19e5dda264cddb54\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a5e9b51cd5d488dc70c819336111e83c9941a65">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0864a9d4dff46957dba85714ca04cc63f7a15389\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.crashlytics.sdk.android\beta\1.2.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b42cf2134829f715edfa2adaf0ee246631322dba">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.crashlytics.sdk.android-beta-1.2.2_2db3dcfc0d540e872e9a5c4d234f4ff35f2a5670\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.github.tony19\logback-android-core\1.1.1-6\93117015ae639e6482e4e1ad5f988c3f61d09fe0\logback-android-core-1.1.1-6.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="93117015ae639e6482e4e1ad5f988c3f61d09fe0">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\logback-android-core-1.1.1-6_7f4afa51a135b89af18efbe5f9a9ec66cee24e88\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.github.tony19\apktool-lib\1.4.4-3\1d0125bf578cb30dd192496db56c2d937495248a\apktool-lib-1.4.4-3.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1d0125bf578cb30dd192496db56c2d937495248a">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\apktool-lib-1.4.4-3_d8af43ed420c8f7b70d0792dcf707a728db8a117\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\SDK\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_c66f5efd8275a77ad4b6d4605e5ab89fa7ac3b7c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.squareup.haha\haha\2.0.3\640a438d2d415c056ca6a673ac26b183b044e160\haha-2.0.3.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\haha-2.0.3_8e686ed8b58734a7497ffa01df0d31abc414bfee\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.21\139535a69a4239db087de9bab0bee568bf8e0b70\slf4j-api-1.7.21.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="139535a69a4239db087de9bab0bee568bf8e0b70">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\slf4j-api-1.7.21_f39d77c7f35e392dc389851de27be5d6c43c9615\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.crashlytics.sdk.android\crashlytics-core\2.3.14\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7ff77725723167163d69439e3fd077bd0899babf">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.crashlytics.sdk.android-crashlytics-core-2.3.14_dc513750d8f6e7db6d30fd826ecaf49d6f1e9b55\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_a348d8c9c6243e2f1200006bda8db2a55e020309\classes.dex" />
+    </item>
+    <item
+        jar="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d1665bdca819f9bd3c10ed6c7b482ffff509917d">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5e7ddda9c92a1ad3c9fbe2571879ab073d00aa04\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\ApisMantis\.gradle\caches\modules-2\files-2.1\com.sun.mail\android-mail\1.5.5\53a2f927b235acb565dbe9314ececfb7e6d43020\android-mail-1.5.5.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="53a2f927b235acb565dbe9314ececfb7e6d43020">
+        <dex dex="D:\ANDROID\STUDY\CODE\logback-leakcanary-crashlytic-app\app\build\intermediates\transforms\dex\debug\folders\1000\10\android-mail-1.5.5_9f7b22e63dcd33135e6798f134ab8b8c54e63d10\classes.dex" />
+    </item>
+
+</items>

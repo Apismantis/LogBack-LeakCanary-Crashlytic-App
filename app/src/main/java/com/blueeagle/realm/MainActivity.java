@@ -1,22 +1,19 @@
 package com.blueeagle.realm;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.util.Log;
-import android.view.Menu;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,6 +21,10 @@ import android.widget.Toast;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import Model.Contact;
 import io.fabric.sdk.android.Fabric;
@@ -33,18 +34,23 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public static RealmConfiguration realmConfiguration;
     private FloatingActionButton fab;
     private DrawerLayout drawer;
     private NavigationView navigationView;
-
     private ListView listContact;
     private MyAdapter adapter;
-
     private Realm realm;
     private RealmResults<Contact> contactResults;
-    public static RealmConfiguration realmConfiguration;
-
     private Logger logger = LoggerFactory.getLogger(MainActivity.class);
+    private RefWatcher refWatcher;
+    // changeListener will be called when contactResults is changed
+    private RealmChangeListener changeListener = new RealmChangeListener() {
+        @Override
+        public void onChange() {
+            Toast.makeText(getApplicationContext(), "Data is updated", Toast.LENGTH_SHORT).show();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return;
         }
 
-        LeakCanary.install(getApplication());
+        refWatcher = LeakCanary.install(getApplication());
+        new MyAsynTask().execute(this);
 
         // Set up Crashlytics, disabled for debug builds
         Crashlytics crashlyticsKit = new Crashlytics.Builder()
@@ -120,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Crashlytics.setString("str_id", "String message");
     }
 
-
     private void findAllViewId() {
         listContact = (ListView) findViewById(R.id.list_item_contact);
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -150,14 +156,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
     }
-
-    // changeListener will be called when contactResults is changed
-    private RealmChangeListener changeListener = new RealmChangeListener() {
-        @Override
-        public void onChange() {
-            Toast.makeText(getApplicationContext(), "Data is updated", Toast.LENGTH_SHORT).show();
-        }
-    };
 
     private void initData() {
         realm.beginTransaction();
@@ -267,9 +265,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // remove all change listener then close realm
 
         // remove changeListener of contactResults
-        contactResults.removeChangeListeners();
+        //contactResults.removeChangeListeners();
         // close realm
-        realm.close();
+        //realm.close();
+
+        // watch leak memory
+        refWatcher.watch(this);
+
         super.onDestroy();
     }
 
@@ -321,5 +323,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    class MyAsynTask extends AsyncTask<Object, String, String> {
+
+        private Context context;
+
+        @Override
+        protected String doInBackground(Object... params) {
+            context = (Context) params[0];
+
+            SingletonSaveContext.getInstance().setContext(context);
+
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+
+            }
+
+            return "OK";
+        }
     }
 }
