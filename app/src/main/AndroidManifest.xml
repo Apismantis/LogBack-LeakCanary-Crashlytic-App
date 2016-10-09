@@ -33,6 +33,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.blueeagle.realm.MainActivity" />
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="21a5701b61212d592a177b289251f8ee1f0f3c2c" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

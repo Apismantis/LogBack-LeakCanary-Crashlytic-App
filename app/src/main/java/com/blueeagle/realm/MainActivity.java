@@ -21,12 +21,18 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.blueeagle.realm.SingletonSaveContext;
 
+=======
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
+>>>>>>> 81aa86efb714865204389c2072fc1660fe7c7244
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import Model.Contact;
+import io.fabric.sdk.android.Fabric;
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import io.realm.RealmConfiguration;
@@ -60,6 +66,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         refWatcher = LeakCanary.install(getApplication());
         new MyAsynTask().execute(this);
+
+        // Set up Crashlytics, disabled for debug builds
+        Crashlytics crashlyticsKit = new Crashlytics.Builder()
+                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
+                .build();
+
+        Fabric.with(this, new Crashlytics());
+        logUser();
+        Crashlytics.log(1, "CRASHLYTIC", "Message from craslytic 3........");
 
         // Find all view id
         findAllViewId();
@@ -101,6 +116,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         logger.warn("LogBack - Warn message");
         logger.error("LogBack - Error message");
     }
+
+    private void logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        Crashlytics.setUserIdentifier("12345");
+        Crashlytics.setUserEmail("user@fabric.io");
+        Crashlytics.setUserName("Test User");
+        Crashlytics.log(1, "CRASHLYTIC", "Message from craslytic 1........");
+        Crashlytics.log(1, "CRASHLYTIC", "Message from craslytic 2........");
+        Crashlytics.setString("str_id", "String message");
+    }
+
 
     private void findAllViewId() {
         listContact = (ListView) findViewById(R.id.list_item_contact);
@@ -220,6 +247,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // LogBack
         logger.debug("LogBack - Sort ascending complete!");
+
+        //logUser();
+        Crashlytics.setUserEmail("crash@blue.io");
+        Crashlytics.log("Log này có được gửi...");
+        throw new RuntimeException("Crash message...");
     }
 
     private void updateListView() {
