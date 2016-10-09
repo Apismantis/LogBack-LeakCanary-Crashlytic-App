@@ -5,9 +5,9 @@ import org.slf4j.LoggerFactory;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,7 +21,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.blueeagle.realm.SingletonSaveContext;
+
 import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 import Model.Contact;
 import io.realm.Realm;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static RealmConfiguration realmConfiguration;
 
     private Logger logger = LoggerFactory.getLogger(MainActivity.class);
+    private RefWatcher refWatcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +54,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(LeakCanary.isInAnalyzerProcess(this)) {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }
 
-        LeakCanary.install(getApplication());
+        refWatcher = LeakCanary.install(getApplication());
+        new MyAsynTask().execute(this);
 
         // Find all view id
         findAllViewId();
@@ -171,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // get all contact
         contactResults = realm.where(Contact.class).findAll();
 
-        if(contactResults.size() == 0)
+        if (contactResults.size() == 0)
             initData();
 
         // LogBack
@@ -238,9 +243,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // remove all change listener then close realm
 
         // remove changeListener of contactResults
-        contactResults.removeChangeListeners();
+        //contactResults.removeChangeListeners();
         // close realm
-        realm.close();
+        //realm.close();
+
+        // watch leak memory
+        refWatcher.watch(this);
+
         super.onDestroy();
     }
 
@@ -292,5 +301,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    class MyAsynTask extends AsyncTask<Object, String, String> {
+
+        private Context context;
+
+        @Override
+        protected String doInBackground(Object... params) {
+            context = (Context) params[0];
+
+            SingletonSaveContext.getInstance().setContext(context);
+
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+
+            }
+
+            return "OK";
+        }
     }
 }
